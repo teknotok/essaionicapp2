@@ -2,14 +2,23 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
+  },
+  {
+    path: 'create',
+    loadChildren: () => import('./customers/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'edite',
+    loadChildren: () => import('./customers/edite/edite.module').then( m => m.EditePageModule)
+  },
+  {
+    path: 'all-customers',
+    loadChildren: () => import('./customers/all-customers/all-customers.module').then( m => m.AllCustomersPageModule)
   },
 ];
 

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>allCustomers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button>
+    <ion-icon name="add" (click)="fetchCustomers()"></ion-icon>
+  </ion-button>
+  <ul *ngFor="let item of htmlData">
+    <li>{{item.name}}</li>
+    <li>{{item.marka}}</li>
+
+  </ul>
+</ion-content>

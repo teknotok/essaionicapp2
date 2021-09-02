@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="customerForm" (ngSubmit)="fromSubmit()">
+      <ion-item>
+        <ion-label position="floating">id</ion-label>
+        <ion-input formControlName="id" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">date</ion-label>
+        <ion-input formControlName="date" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">model</ion-label>
+        <ion-input formControlName="model" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">marka</ion-label>
+        <ion-input formControlName="marka" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">problem</ion-label>
+        <ion-input formControlName="problem" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">imei</ion-label>
+        <ion-input formControlName="imei" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">note</ion-label>
+        <ion-input formControlName="note" type="text" required></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">avatar</ion-label>
+        <ion-input formControlName="avatar" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">
+            Create Customer
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> </ion-col> </ion-row
+      ><ion-row>
+        <ion-col> </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

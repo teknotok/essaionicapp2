@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/compat/database'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  items: Observable<any[]>;
+  constructor(firestore: AngularFirestore, db: AngularFireDatabase) {
+    this.items = firestore.collection('todos').valueChanges();
+    const listRef = db.list('todos');
+  }
+
 }

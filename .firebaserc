@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "vue-school-b67b2": {
+      "hosting": {
+        "app": [
+          "vue-school-b67b2"
+        ]
+      }
+    }
+  }
+}
