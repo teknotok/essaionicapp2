@@ -21,15 +21,14 @@ export class CustomerServiceService {
 
   createUser(user: User) {
     return this.userList.push({
-      email:user.email,
-      password:user.password,
+      email: user.email,
+      password: user.password,
     })
   }
 
   createCustomer(cus: Customer) {
     return this.customerList.push({
-      id: '32423',
-      date: '12-05-2021',
+      key: this.customerList.push().getKey(),
       name: cus.name,
       mobile: cus.mobile,
       model: cus.model,
@@ -46,13 +45,12 @@ export class CustomerServiceService {
     return this.db.object('/customer')
   }
 
-  getCustomer(id: string) {
-    return this.customerRef = this.db.object('/customer/' + id)
+  getCustomer(key: string) {
+    return this.customerRef = this.db.object('/customer/' + key)
   }
 
-  updateCustomer(id, cus: Customer) {
+  updateCustomer(key, cus: Customer) {
     return this.customerRef.update({
-      id: cus.id,
       date: cus.date,
       name: cus.name,
       mobile: cus.mobile,
@@ -66,9 +64,10 @@ export class CustomerServiceService {
     })
   }
 
-  deleteCustomer(id: string) {
-    this.customerRef = this.db.object('/customer/' + id);
-    this.customerRef.remove();
+  deleteCustomer(key: string) {
+    let test = this.db.list(key)
+    test.remove();
+    console.log(test)
   }
 
 }

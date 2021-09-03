@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerServiceService } from 'src/app/shared/customer-service.service';
 import { Customer } from '../../models/cusmodel';
 
@@ -12,7 +12,7 @@ export class CustomerInfoPage implements OnInit {
   allCustomerDate;
   htmlData = [];
   lastHtml: Customer = {
-    id: '',
+    key: '',
     date: '', //
     name: '', //
     mobile: 0, //
@@ -24,7 +24,7 @@ export class CustomerInfoPage implements OnInit {
     teslimat: false,
     teslimatTarihi: '',
   };
-  constructor(private customerServiceInfo: CustomerServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private customerServiceInfo: CustomerServiceService, private activatedRoute: ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(imei => {
@@ -39,10 +39,17 @@ export class CustomerInfoPage implements OnInit {
         this.allCustomerDate.payload.forEach(item => {
           this.htmlData.push(item.toJSON());
         })
-        console.log(this.lastHtml = this.htmlData[id])
-
+        this.lastHtml = this.htmlData[id]
       })
     })
+  }
+
+  deleteCustomer(key:string) {
+    console.log(key)
+    if(window.confirm('Are You Sure')){
+      this.customerServiceInfo.deleteCustomer(key);
+      this.router.navigate(['./all-customers'])
+    }
   }
 
 }

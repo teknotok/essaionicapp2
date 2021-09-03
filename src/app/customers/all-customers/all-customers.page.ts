@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { stringify } from 'querystring';
 import { CustomerServiceService } from 'src/app/shared/customer-service.service';
 import { Customer } from '../models/cusmodel';
@@ -12,7 +13,7 @@ export class AllCustomersPage implements OnInit {
   allcustomers;
   htmlData = [];
   id:number=  0;
-  constructor(private customerService: CustomerServiceService) { }
+  constructor(private customerService: CustomerServiceService,private router :Router) { }
 
   ngOnInit() {
     let customerRes = this.customerService.getAllCustomer();
@@ -30,10 +31,5 @@ export class AllCustomersPage implements OnInit {
     })
   }
 
-  deleteCustomer(id:string) {
-    if(window.confirm('Are You Sure')){
-      this.customerService.deleteCustomer(id);
-    }
-  }
 
 }
