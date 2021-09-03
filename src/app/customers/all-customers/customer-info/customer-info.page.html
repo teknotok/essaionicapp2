@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Müşteri Bilgileri</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle> </ion-card-subtitle>
+      <ion-card-title>{{lastHtml.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item> {{lastHtml.date}} </ion-item>
+        <ion-item> {{lastHtml.imei}} </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <section
+      style="
+        padding: 10px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    >
+      <ion-buttons>
+        <ion-button
+          style="margin-left: auto; margin-right: auto"
+          color="success"
+          ><ion-icon name="create-outline"></ion-icon
+        ></ion-button>
+        <ion-button
+          style="margin-left: auto; margin-right: auto"
+          color="warning"
+          ><ion-icon name="sync-outline"></ion-icon
+        ></ion-button>
+        <ion-button style="margin-left: auto; margin-right: auto" color="danger"
+          ><ion-icon name="trash-outline"></ion-icon
+        ></ion-button>
+      </ion-buttons>
+    </section>
+  </ion-card>
+</ion-content>

@@ -5,7 +5,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -19,6 +19,14 @@ const routes: Routes = [
   {
     path: 'all-customers',
     loadChildren: () => import('./customers/all-customers/all-customers.module').then( m => m.AllCustomersPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./auth/signup/signup.module').then( m => m.SignupPageModule)
   },
 ];
 

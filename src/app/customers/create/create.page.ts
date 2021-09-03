@@ -21,16 +21,14 @@ export class CreatePage implements OnInit {
 
   ngOnInit() {
     this.customerForm = this.fb.group({
-      id: [''],
-      date: [''],
       name: [''],
+      mobile: [''],
       model: [''],
       marka: [''],
       problem: [''],
       imei: [''],
       note: [''],
       teslimatTarihi: [''],
-      avatar: [''],
     })
   }
   fromSubmit() {
